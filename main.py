@@ -18,12 +18,12 @@ class TestRony(unittest.TestCase):
         self.interaction.select_tanant_setting()
         self.interaction.click_config_user_button()
         self.interaction.wait_for_user_table_page()
-        
-
-    def test_search_rony(self):
         del self.browser.requests
         self.interaction.serach_user("rony")
         self.interaction.busy_wait_for_table_update()
+        
+
+    def test_search_rony(self):
         table_row = self.interaction.get_user_table_row()
         assert len(table_row) == 2
 
